@@ -20,11 +20,7 @@ public class KnapsackSolves {
         }
         return arr;
     }
-    /**
-     * 将求得的一位数组子集转换为二维数组
-     * @param m
-     * @return
-     */
+
     public int[][] Subset(int m)
     {
         KnapsackSolves s=new KnapsackSolves();
@@ -37,7 +33,6 @@ public class KnapsackSolves {
             }
         }
         return subset;
-
     }
     public int MaxValue(int arr[])
     {

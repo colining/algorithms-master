@@ -8,49 +8,50 @@ public class KMP {
     public KMP() {
     }
 
-   public void GetNext (char T[], int next[])
-    {
-        int i , j ,len ;
-        next[0]= -1 ;
-        for (j= 1; T[j]!='\0';j++)
-        {
-            for (len = j-1;len>=1; len--)
-            {
-                for (i = 0; i < len; i++)
-                    if (T[i] != T[j - len + i])
-                        break;
-                    if (i == len)
+   public void GetNext (char T[], int next[])   //求得模式T
+                {
+                    int i , j ,len ;
+                    next[0]= -1 ;
+                    for (j= 1; T[j]!='\0';j++)                      //依次求得next[j]
                     {
-                        next[j] = len;
-                        break;
+                        for (len = j-1;len>=1; len--)
+                        {
+                            for (i = 0; i < len; i++)
+                                if (T[i] != T[j - len + i])
+                                    break;
+                            if (i == len)
+                            {
+                                next[j] = len;
+                                break;
+                            }
+                        }
+
+                        if (len < 1)
+                            next[j] = 0;
+                        //System.out.print( T[j]);
                     }
-            }
-
-            if (len < 1)
-                next[j] = 0;
-               //System.out.print( T[j]);
-        }
 
 
-    }
+                }
 
-    public  int KMP(char s[],char t[])
-    {
-        int i = 0 ,j=0;
-        int next[] = new  int[80];
-        GetNext(t,next);
-        while (s[i]!='\0'&&t[j]!='\0')
-        {
-            if (s[i]==t[j])
+            public  int KMP(char s[],char t[])
             {
-                i++;
-                j++;
+                int i = 0 ,j=0;
+                int next[] = new  int[80];
+                GetNext(t,next);            //对t求next[]
+                while (s[i]!='\0'&&t[j]!='\0')
+                {
+                    if (s[i]==t[j])
+                    {
+                        i++;
+                        j++;
 
-            }
-            else
-            {
-                j=next[j];
-                if (j== -1)
+                    }
+                    else
+                    {
+                        //匹配失败，向右移动next[j]个单位继续匹配
+                        j=next[j];
+                        if (j== -1)
                 {
                     i++;
                     j++;
@@ -61,7 +62,6 @@ public class KMP {
             return (i-t.length+1);
         else
             return 0;
-
     }
     protected int[] getNext(char[] p) {
         // 已知next[j] = k,利用递归的思想求出next[j+1]的值
