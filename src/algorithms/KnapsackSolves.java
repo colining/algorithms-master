@@ -6,8 +6,8 @@ package algorithms;
 public class KnapsackSolves {
     public int[] DecimaltoBinary(int n,int m)
     {
-        int r;//求余数
-        int consult=1;//求商
+        int r;                                   //求余数
+        int consult=1;                          //求商
         int j = 0;
         int []arr=new int[m];
         while (consult!=0)

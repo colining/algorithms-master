@@ -2,6 +2,8 @@ package algorithms;
 
 import model.Point;
 
+import java.util.Scanner;
+
 /**
  * Created by asus on 2016/11/24.
  */
@@ -30,14 +32,15 @@ public class ClosestPoints {
 
     public  double ClosestPoints(Point points[] , int low, int high)    //分治
     {
+
         double d1, d2,d3,d;
         int mid , i , j ,index;
         Point p [] = new Point[points.length];
-        if (high - low == 1)        //只有两个点了，可以进行返回了，返回两点距离
+        if (high - low == 1)                 //只有两个点了，可以进行返回了，返回两点距离
     {
         return Distance(points[low],points[high]);
     }
-        if(high - low == 2)                 //只有三个点，也要求距离了，要不然就该分出一个的情况了
+        if(high - low == 2)                 //只有三个点，也要求距离了，要不然就该有分出一个的情况了
         {
             d1= Distance( points[low],points[high]);    //1,3
             d2= Distance( points[low+1],points[high]);  //2,3

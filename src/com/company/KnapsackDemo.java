@@ -9,18 +9,18 @@ import java.util.Scanner;
 public class KnapsackDemo {
     public static void main(String[] args) {
 
-        int m;//物品的数量
-        int capacity;//背包的容量
-        int wb=0;//初始化背包的质量
-        int vb=0;//初始化背包的价值
+        int m;                              //物品的数量
+        int capacity;                       //背包的容量
+        int wb=0;                           //初始化背包的质量
+        int vb=0;                           //初始化背包的价值
         KnapsackSolves s=new KnapsackSolves();
         Scanner sc=new Scanner(System.in);
         System.out.print("请输入物品的数量：");
         m=sc.nextInt();
         System.out.print("请输入背包的容量：");
         capacity=sc.nextInt();
-        int weight[]=new int[m];//用来记录每个物品的重量
-        int value[]=new int[m];//用来记录每个物品的价值
+        int weight[]=new int[m];                    //每个物品的重量
+        int value[]=new int[m];                     //每个物品的价值
         for(int i=0;i<m;i++)
         {
             System.out.print("请输入物品"+i+"的重量：");
@@ -45,7 +45,7 @@ public class KnapsackDemo {
 
             if(wb<=capacity)
             {
-                MaxValue[i]=wb;
+                MaxValue[i]=vb;
                 System.out.println("------"+"方案"+i+":总价值为："+vb+" "+"总重量为："+wb);
             }
             else
@@ -56,6 +56,6 @@ public class KnapsackDemo {
             wb=0;
             vb=0;
         }
-        System.out.println("背包可装入的最大容量为："+s.MaxValue(MaxValue));
+        System.out.println("背包可装入的最大价值为："+s.MaxValue(MaxValue));
     }
 }
