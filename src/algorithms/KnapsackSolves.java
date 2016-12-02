@@ -4,7 +4,7 @@ package algorithms;
  * Created by asus on 2016/11/25.
  */
 public class KnapsackSolves {
-    public int[] DecimaltoBinary(int n,int m)
+    public int[] DecimaltoBinary(int n,int m) //全排列
     {
         int r;                                   //求余数
         int consult=1;                          //求商

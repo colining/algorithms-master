@@ -10,17 +10,17 @@ public class Task_allocationSolves {
     {
         int mincost = 100;
         for (int i = 0 ,cost = 0 ;i<C.length;i++)
+    {
+        for (int j = 0 ; j<C[0].length;j++)
         {
-            for (int j = 0 ; j<C[0].length;j++)
-            {
-                if (i!=j) {
-                    cost = C[0][i] + C[1][j];
-                    if (cost < mincost)
-                        mincost = cost;
-                }
+            if (i!=j) {
+                cost = C[0][i] + C[1][j];
+                if (cost < mincost)
+                    mincost = cost;
             }
-
         }
+
+    }
         return mincost;
     }
 }
