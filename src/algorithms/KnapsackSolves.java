@@ -24,17 +24,17 @@ public class KnapsackSolves {
     public int[][] Subset(int m)
     {
         KnapsackSolves s=new KnapsackSolves();
-        int subset[][]=new int[(int) Math.pow(2, m)][m];
+        int subset[][]=new int[(int) Math.pow(2, m)][m];            //子集
         for (int i = 0; i <Math.pow(2, m); i++)
         {
             for (int j =0; j<m; j++)
             {
-                subset[i][j]=s.DecimaltoBinary(i,m)[j];
+                subset[i][j]=s.DecimaltoBinary(i,m)[j];         //检验子集中的元素能否放进去
             }
         }
         return subset;
     }
-    public int MaxValue(int arr[])
+    public int MaxValue(int arr[])      //求得数组中的最大值
     {
         int max = arr[0];
         for (int in = 0 ; in < arr.length; in++)

@@ -8,6 +8,15 @@ import java.util.Scanner;
  * Created by asus on 2016/11/24.
  */
 public class ClosestPoints {
+    public Point getPoint1() {
+        return point1;
+    }
+
+    public Point getPoint2() {
+        return point2;
+    }
+    Point point1;
+    Point point2;
     public ClosestPoints() {
     }
     public  double ClosestPoints(Point points[]  , int n)           //蛮力法
@@ -38,7 +47,10 @@ public class ClosestPoints {
         Point p [] = new Point[points.length];
         if (high - low == 1)                 //只有两个点了，可以进行返回了，返回两点距离
     {
+        point1 = points[low];
+        point2 = points[high];
         return Distance(points[low],points[high]);
+
     }
         if(high - low == 2)                 //只有三个点，也要求距离了，要不然就该有分出一个的情况了
         {

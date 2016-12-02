@@ -15,9 +15,11 @@ public class PointDemo {
         Point point4 = new Point(0, 5);
         Point points[] = {point1, point2, point3, point4};
         //closestPoints.ClosestPoints(points,points.length);
-        //double a = closestPoints.ClosestPoints(points, 0, 3);   //分治
+        double a = closestPoints.ClosestPoints(points, 0, 3);   //分治
+        System.out.print("最近点对为:"+closestPoints.getPoint1().getX()+" "+closestPoints.getPoint1().getY()+"\n"+closestPoints.getPoint2().getX()+" "+closestPoints.getPoint2().getY());
         //System.out.print("最近点对距离为"+a);
-        double a = closestPoints .ClosestPoints(points,4);  //蛮力法
+        //double a = closestPoints .ClosestPoints(points,4);  //蛮力法
+
 
 
     }
