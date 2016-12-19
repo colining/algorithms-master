@@ -61,8 +61,6 @@ public class HeapSort {
         adjustDownToUp(array,i,array.length);
         return array;
     }
-
-
     //插入操作:向大根堆array中插入数据data
     public int[] insertData(int[] array, int data){
         array[array.length-1] = data;                       //将新节点放在堆的末端
