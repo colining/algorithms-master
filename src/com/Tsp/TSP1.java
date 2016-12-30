@@ -13,7 +13,7 @@ public class TSP1 {
         Scanner scanner = new Scanner(System.in);
         n=scanner.nextInt();
         int dis[][]= new int[n][n];
-        for(int i=0; i<n; i++)
+        for(int i=0; i<n; i++)              //注意。此处只输入n-1 平方个数；对角线等于1000
         {
             for(int j=0; j<n; j++)
             {
@@ -39,12 +39,12 @@ public class TSP1 {
         int n = dis.length;
         int minDis;
         int d[][] = new int[n][(int) Math.pow(2,n-1)];                                 //2的n-1次方
-        for(int i=1; i<n; i++)
+        for(int i=1; i<n; i++)                  //将结果矩阵第一列设为原矩阵的值
         {
             d[i][0]=dis[i][0];
         }
 
-        for(int j=1; j<(int)Math.pow(2,n-1); j++)
+        for(int j=1; j<(int)Math.pow(2,n-1); j++)               //对于每一个子集
         {
             for(int i=1; i<n; i++)   //j用二进制表示的城市集合
             {
